@@ -4,7 +4,7 @@ import json
 import hashlib
 import requests
 from datetime import datetime
-from entient-ultimate-system import CompleteSystem, MetaAgentHarness
+from entient_ultimate_system import CompleteSystem, MetaAgentHarness
 
 app = Flask(__name__)
 
