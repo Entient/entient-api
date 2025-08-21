@@ -23,8 +23,6 @@ from typing import Dict, List, Optional, Tuple, Any, Set, Callable
 from enum import Enum
 from collections import defaultdict, Counter
 from datetime import datetime, timezone
-from scipy.stats import entropy
-from scipy.spatial.distance import cosine
 import random
 
 # ============================================================================
@@ -185,7 +183,7 @@ class StrategyMemoryCompressor:
         total = sum(strategy_counts.values())
         probabilities = [count/total for count in strategy_counts.values()]
         
-        current_entropy = entropy(probabilities) if probabilities else 0
+        current_entropy = 0  # Simplified without scipy
         self.strategy_entropy_history.append(current_entropy)
     
     def get_learning_curve(self) -> Dict[str, Any]:
