@@ -357,6 +357,12 @@ class SealRegistry:
             'classification': seal.discovery_classification.value
         })
         
+        try:
+            from database import save_seal
+            save_seal(seal, discovery_content)
+        except Exception as e:
+            print(f"Database save failed: {e}")
+        
         return True
     
     def verify_seal_exists(self, seal_id: str) -> bool:
